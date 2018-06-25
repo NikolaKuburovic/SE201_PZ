@@ -11,6 +11,12 @@
         
                 <intercept-url pattern="/login" access="permitAll" />
                 <intercept-url pattern="/hello" access="permitAll" />
+                <intercept-url pattern="/lista_zivotinja" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')" />
+                <intercept-url pattern="/add_korisnik" access="hasRole('ROLE_ADMIN')" />
+                <intercept-url pattern="/add_rasazivotinja" access="hasRole('ROLE_ADMIN')" />
+                <intercept-url pattern="/add_vrstazivotinja" access="hasRole('ROLE_ADMIN')" />
+                <intercept-url pattern="/add_zivotinja" access="hasRole('ROLE_ADMIN')" />
+                
         <access-denied-handler error-page="/403" />
         <form-login
             login-page="/login"
